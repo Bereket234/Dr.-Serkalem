@@ -108,6 +108,9 @@ a:focus {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.hide{
+  display: none;
+}
 
 .hero_area .hero_bg_box {
   position: absolute;
@@ -163,7 +166,12 @@ a:focus {
 }
 
 .custom_nav-container {
-  padding: 0;
+  padding:15px 150px;
+}
+
+.activate {
+  padding: 15px 100px;
+  background-color: var(--primary);
 }
 
 .custom_nav-container .navbar-nav {
@@ -308,21 +316,23 @@ a:focus {
   width: 165px;
 }
 
-.slider_section .detail-box .btn-box .btn1 {
+.slider_section .detail-box a {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 10px 45px;
   background-color: #ffffff;
   color: var(--second);
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid #ffffff;
+  margin-top: 15px;
 }
 
-.slider_section .detail-box .btn-box .btn1:hover {
+.slider_section .detail-box a:hover {
   background-color: transparent;
   color: #ffffff;
 }
+
 
 .slider_section .img-box {
   display: -webkit-box;
@@ -523,6 +533,7 @@ a:focus {
 
 .doctor_section .box .img-box img {
   width: 100%;
+  height: 400px;
 }
 
 .doctor_section .box .detail-box {
@@ -530,6 +541,14 @@ a:focus {
   padding: 25px 15px;
   text-align: center;
   position: relative;
+}
+
+.doctor_section .box .detail-box .read-more{
+  cursor: pointer;
+  color : var(--primary);
+}
+.doctor_section .box .detail-box .read-more:hover {
+  color: var(--forth);
 }
 
 .doctor_section .box .detail-box .social_box {
