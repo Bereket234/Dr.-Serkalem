@@ -1,23 +1,11 @@
 const content= document.querySelectorAll('.content');
+const menu= document.querySelectorAll('.navbar-toggler-icon');
 
 const maxNumOfChar= 125
-const sections =document.querySelectorAll('section')
-const nav = document.querySelector(".home-nav-container")
-window.addEventListener('scroll', () =>{
-    let current = '';
-    sections.forEach(section =>{
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if(scrollY > (sectionTop-750) && scrollY <(sectionTop + sectionHeight)){
-            if(section.classList.contains('nav-visible')){
-                console.log('heree');
-               nav.classList.add('activate');
-            }
-            else{
-               nav.classList.remove('activate');
-            }
-        }
-    })
+
+window.addEventListener('scroll', ()=>{
+    var header= document.querySelector('.home-nav-container');
+    header.classList.toggle('sticky', window.scrollY>0);
 })
 
 content.forEach((item)=>{
@@ -53,28 +41,6 @@ let data= {
     phone: phone.value,
     message: message.value,
 }
-// $('form').on('submit', (e)=>{
-//     e.preventDefault();
-    
-
-    // const name= $('#name').val().trim();
-    // const phone= $('#phone').val().trim();
-    // const email= $('#email').val().trim();
-    // const message= $('#message').val().trim();
-    // const data= {
-    //     name,
-    //     phone,
-    //     email,
-    //     message
-    // }
-    // console.log(data)
-    // $.post('/', data, (err, res)=>{
-    //    if(err){
-    //        console.log(err);
-    //    }else{
-    //        console.log(res.data)
-    //    }
-    // })
 console.log(data);
     let xhr=new XMLHttpRequest();
     xhr.open('POST', '/');

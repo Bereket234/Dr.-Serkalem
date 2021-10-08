@@ -169,8 +169,9 @@ a:focus {
   padding:15px 150px;
 }
 
-.activate {
-  padding: 15px 100px;
+
+.sticky {
+  padding: 15px 150px;
   background-color: var(--primary);
 }
 
