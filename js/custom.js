@@ -1,8 +1,12 @@
 const content= document.querySelectorAll('.content');
+const menu= document.querySelectorAll('.navbar-toggler-icon');
 
-const maxNumOfChar= 100
+const maxNumOfChar= 125
 
-console.log(content);
+window.addEventListener('scroll', ()=>{
+    var header= document.querySelector('.home-nav-container');
+    header.classList.toggle('sticky', window.scrollY>0);
+})
 
 content.forEach((item)=>{
     if(item.textContent.length < maxNumOfChar){
@@ -37,28 +41,6 @@ let data= {
     phone: phone.value,
     message: message.value,
 }
-// $('form').on('submit', (e)=>{
-//     e.preventDefault();
-    
-
-    // const name= $('#name').val().trim();
-    // const phone= $('#phone').val().trim();
-    // const email= $('#email').val().trim();
-    // const message= $('#message').val().trim();
-    // const data= {
-    //     name,
-    //     phone,
-    //     email,
-    //     message
-    // }
-    // console.log(data)
-    // $.post('/', data, (err, res)=>{
-    //    if(err){
-    //        console.log(err);
-    //    }else{
-    //        console.log(res.data)
-    //    }
-    // })
 console.log(data);
     let xhr=new XMLHttpRequest();
     xhr.open('POST', '/');
